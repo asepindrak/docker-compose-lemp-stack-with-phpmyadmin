@@ -95,13 +95,13 @@ docker-compose up -d --build
 PHP
 
 ```
-$db_bost = "mysql"
+$db_host = "mysql"
 ```
 
 NodeJS
 
 ```
-$db_bost = "localhost"
+$db_host = "localhost"
 ```
 
 > ---
