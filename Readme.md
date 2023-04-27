@@ -18,7 +18,10 @@ URL: https://github.com/asepindrak/docker-compose-lemp-stack-with-phpmyadmin
 1. Configuration
 
    - install docker desktop for PC or Mac
-   - git clone https://github.com/asepindrak/docker-compose-lemp-stack-with-phpmyadmin.git
+
+```
+    git clone https://github.com/asepindrak/docker-compose-lemp-stack-with-phpmyadmin.git
+```
 
 > ---
 
