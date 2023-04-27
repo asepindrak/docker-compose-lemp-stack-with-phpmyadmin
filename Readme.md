@@ -65,7 +65,7 @@ docker-compose up
 
    - .docker/php/Dockerfile
 
-8. PHP,ini file
+8. PHP.ini file
 
    - .docker/php/php.ini
 
