@@ -19,7 +19,7 @@
     </head>
     <body>
         <div class="center">
-            Hello there
+            Server running
         </div>
     </body>
 </html>
