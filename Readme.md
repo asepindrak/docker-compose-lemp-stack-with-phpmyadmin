@@ -89,6 +89,22 @@ docker-compose up -d --build
 > upload your app to src folder
 
 > ---
+>
+> access mysql-test.php to check the database connection http://localhost/mysql-test.php
+
+PHP
+
+```
+$db_bost = "mysql"
+```
+
+NodeJS
+
+```
+$db_bost = "localhost"
+```
+
+> ---
 
 thank's to osteel's blog
 https://tech.osteel.me/posts/docker-for-local-web-development-introduction-why-should-you-care
