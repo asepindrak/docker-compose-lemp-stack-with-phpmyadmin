@@ -53,8 +53,24 @@ docker-compose up
 docker-compose up
 ```
 
-4. Rebuild Container
-   > if you change docker-compose.yaml, please rebuild the container with
+5. Mysql Config
+
+   - .docker/mysql/my.cnf
+
+6. Nginx Config
+
+   - .docker/nginx/php.conf
+
+7. PHP Dcokerfile
+
+   - .docker/php/Dockerfile
+
+8. PHP,ini file
+
+   - .docker/php/php.ini
+
+9. Rebuild Container
+   > if you change docker-compose.yaml or my.cnf or php.conf or php/Dockerfile or php.ini or .env, please rebuild the container with
 
 ```
 docker-compose up -d --build
