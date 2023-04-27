@@ -84,3 +84,8 @@ docker-compose up -d --build
 - password: root
 
 > upload your app to src folder
+
+> ---
+
+thank's to osteel's blog
+https://tech.osteel.me/posts/docker-for-local-web-development-introduction-why-should-you-care
