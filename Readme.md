@@ -64,7 +64,7 @@ docker-compose up
 
    - .docker/nginx/php.conf
 
-7. PHP Dcokerfile
+7. PHP Dockerfile
 
    - .docker/php/Dockerfile
 
