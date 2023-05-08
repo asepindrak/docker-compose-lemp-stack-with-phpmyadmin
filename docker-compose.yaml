@@ -36,6 +36,7 @@ services:
     volumes:
       - ./.docker/mysql/my.cnf:/etc/mysql/my.cnf
       - mysqldata:/var/lib/mysql
+    command: mysqld --sql_mode=""
     healthcheck:
       test: mysqladmin ping -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD
       interval: 5s
