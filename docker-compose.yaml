@@ -56,7 +56,9 @@ services:
 
   # Bun
   bun:
-    image: oven/bun
+    build: ./.docker/php
+    ports:
+      - 3000:3000
 
   # Postgres
   postgres:
