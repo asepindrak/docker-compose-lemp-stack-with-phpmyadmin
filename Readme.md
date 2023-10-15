@@ -14,6 +14,8 @@ URL: https://github.com/asepindrak/docker-compose-lemp-stack-with-phpmyadmin
 - E (Nginx)
 - M (Mysql)
 - P (PHP)
+- P (Postgre)
+- B (Bun)
 
 1. Configuration
 

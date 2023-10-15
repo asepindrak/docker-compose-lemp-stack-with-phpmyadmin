@@ -10,7 +10,7 @@ services:
     volumes:
       - ./src:/var/www/php
       - ./.docker/nginx/conf.d:/etc/nginx/conf.d
-    depends_on:
+    links:
       - php
 
   # PHP Service
@@ -42,7 +42,7 @@ services:
       interval: 5s
       retries: 10
 
-  # PhpMyAdmin Service
+  # PhpMyAdmin Service  
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:5
     ports:
@@ -54,6 +54,31 @@ services:
       mysql:
         condition: service_healthy
 
+  # Bun
+  bun:
+    image: oven/bun
+
+  # Postgres
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - '5432:5432'
+    volumes: 
+      - postgres:/var/lib/postgresql/data
+
+  # # Adminer
+  # adminer:
+  #   image: adminer
+  #   restart: always
+  #   ports:
+  #     - 8080:8080
+
 # Volumes
 volumes:
   mysqldata:
+  postgres:
+    driver: local
