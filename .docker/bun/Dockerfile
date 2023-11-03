@@ -2,7 +2,7 @@
 # see all versions at https://hub.docker.com/r/oven/bun/tags
 FROM oven/bun:latest AS base
 # change this to docker src app dir
-WORKDIR /home/adens/www/docker/app
+WORKDIR /home
 
 # install dependencies into temp directory
 # this will cache them and speed up future builds

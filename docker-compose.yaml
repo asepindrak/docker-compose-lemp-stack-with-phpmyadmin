@@ -55,10 +55,10 @@ services:
         condition: service_healthy
 
   # Bun
-  bun:
-    build: ./.docker/php
-    ports:
-      - 3000:3000
+  # bun:
+  #   build: ./.docker/bun
+  #   ports:
+  #     - 4000:3000
 
   # Postgres
   postgres:
@@ -69,9 +69,8 @@ services:
       - POSTGRES_PASSWORD=password
     ports:
       - '5432:5432'
-    volumes: 
+    volumes:
       - postgres:/var/lib/postgresql/data
-
   # # Adminer
   # adminer:
   #   image: adminer
@@ -79,7 +78,7 @@ services:
   #   ports:
   #     - 8080:8080
 
-# Volumes
+  # Volumes
 volumes:
   mysqldata:
   postgres:
