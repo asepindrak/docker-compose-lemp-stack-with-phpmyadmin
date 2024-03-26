@@ -71,6 +71,17 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
+
+  # Cors-Proxy
+  cors-proxy:
+    image: sikassep/cors-proxy:1.0
+    environment:
+      PORT: ${PROXY_PORT}
+      URL: ${PROXY_URL}
+    container_name: cors-proxy
+    restart: always
+    ports:
+      - ${PROXY_PORT}:3050
   # Volumes
 volumes:
   mysqldata:
