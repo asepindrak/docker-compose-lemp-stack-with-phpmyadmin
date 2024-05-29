@@ -54,34 +54,6 @@ services:
       mysql:
         condition: service_healthy
 
-  # WEB Service
-  mini-web:
-    image: sikassep/mini-web:1.0
-    environment:
-      DB_HOST: ${DB_HOST}
-      DB_USER: ${DB_USER}
-      DB_PASS: ${DB_PASS}
-      DB_NAME: ${DB_NAME}
-      DB_PREFIX: ${DB_PREFIX}
-      HTTPS: ${HTTPS}
-      WEB_NAME: ${WEB_NAME}
-    container_name: mini-web
-    ports:
-      - 8070:80
-    depends_on:
-      mysql:
-        condition: service_healthy
-
-  # Cors-Proxy
-  cors-proxy:
-    image: sikassep/cors-proxy:1.0
-    environment:
-      PORT: ${PROXY_PORT}
-      URL: ${PROXY_URL}
-    container_name: cors-proxy
-    restart: always
-    ports:
-      - ${PROXY_PORT}:3050
   # Volumes
 volumes:
   mysqldata:
