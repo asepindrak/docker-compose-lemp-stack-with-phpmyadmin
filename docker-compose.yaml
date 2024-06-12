@@ -2,31 +2,11 @@ version: "3.8"
 
 # Services
 services:
-  # Nginx Service
-  nginx:
-    image: nginx:1.21
-    ports:
-      - 8080:80
-    volumes:
-      - ./src:/var/www/php
-      - ./.docker/nginx/conf.d:/etc/nginx/conf.d
-    links:
-      - php
-
-  # PHP Service
-  php:
-    build: ./.docker/php
-    working_dir: /var/www/php
-    volumes:
-      - ./src:/var/www/php
-      - ./.docker/mysql/my.cnf:/etc/mysql/my.cnf
-    depends_on:
-      mysql:
-        condition: service_healthy
 
   # MySQL Service
   mysql:
     image: mysql/mysql-server:8.0
+    restart: always
     ports:
       - 3306:3306
     environment:
@@ -42,9 +22,34 @@ services:
       interval: 5s
       retries: 10
 
+  # PHP Service
+  php:
+    build: ./.docker/php
+    working_dir: /var/www/php
+    restart: always
+    volumes:
+      - ./src:/var/www/php
+      - ./.docker/mysql/my.cnf:/etc/mysql/my.cnf
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  # Nginx Service
+  nginx:
+    image: nginx:1.21
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - ./src:/var/www/php
+      - ./.docker/nginx/conf.d:/etc/nginx/conf.d
+    links:
+      - php
+
   # PhpMyAdmin Service  
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:5
+    restart: always
     ports:
       - 8090:80
     environment:
